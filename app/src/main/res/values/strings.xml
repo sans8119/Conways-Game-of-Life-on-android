@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">GameOfLife</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="def_pattern">Default Pattern</string>
+    <string name="reset">Reset</string>
+    <color name="dead_clr">#DBDBDB</color>
+    <color name="alive_clr">#6CA6CD</color>
+
+</resources>
