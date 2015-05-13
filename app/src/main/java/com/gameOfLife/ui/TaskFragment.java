@@ -6,17 +6,35 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.gameOfLife.logic.MainScreenLogic;
+import com.gameOfLife.utils.Constants;
 
 public class TaskFragment extends Fragment {
 
     public static String TAG = "TaskFragment";
     private Activity mActivity;
     private MainScreenLogic gameOfLife;
+    private ViewHolder viewHolder = new ViewHolder();
+    private boolean play = false;
+
+    public boolean isPlay() {
+        return play;
+    }
+
+    public void setPlay(boolean play) {
+        this.play = play;
+    }
 
     public MainScreenLogic getGameOfLife() {
         return gameOfLife;
+    }
+
+    public ViewHolder getViewHolder() {
+        if (viewHolder == null)
+            viewHolder = new ViewHolder();
+        return viewHolder;
     }
 
     @Override
@@ -45,13 +63,25 @@ public class TaskFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        gameOfLife.addGridCells(this, mActivity);
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
         gameOfLife.dettachView();
+    }
+
+    public class ViewHolder {
+        private TextView[] textViews;
+
+        public ViewHolder() {
+            textViews = new TextView[Constants.GRID_SIZE * Constants.GRID_SIZE];
+        }
+
+        public TextView[] getTextViews() {
+            return textViews;
+        }
+
     }
 
 }

@@ -56,13 +56,13 @@ public class GameOfLifeActivityTest extends ActivityInstrumentationTestCase2<Mai
             int currentColor = cd.getColor();
             TouchUtils.clickView(this, textViews[i]);
             cd = (ColorDrawable)(textViews[i]).getBackground();
-            int expectedColor=cd.getColor();
+            int actual=cd.getColor();
             if(currentColor==colorAlive)
-            assertEquals("Color of the grid cell should change on click", colorDead,expectedColor);
+            assertEquals("Color of the grid cell should change on click", colorDead,actual);
             else
-                assertEquals("Color of the grid cell should change on click", colorAlive,expectedColor);
+                assertEquals("Color of the grid cell should change on click", colorAlive,actual);
         }
-        actionBarItemClick(R.id.reset,this.getInstrumentation(),gameOfLifeActivity.getMenu());
+
         for(int i=0;i<childCount;i++){
             ColorDrawable cd = (ColorDrawable)(textViews[i]).getBackground();
             int currentColor = cd.getColor();

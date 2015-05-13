@@ -142,7 +142,7 @@ public class TreeNode extends TreeNodeBase {
     }
 
 
-    int[] getBitArray2(int gridSize){//if grid size is say 20 X 20 then pass 20
+    public int[] getBitArray2(int gridSize){//if grid size is say 20 X 20 then pass 20
         long t=System.currentTimeMillis();
         int[] grid=new int[gridSize*gridSize];
         TreeNode innerNode;

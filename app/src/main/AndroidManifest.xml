@@ -9,7 +9,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@android:style/Theme.Holo.Light"
-        android:name="com.gameOfLife.GameOfLifeApplication">
+        >
         <activity
             android:name=".ui.MainScreenActivity"
             android:label="@string/app_name" >
